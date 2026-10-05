@@ -45,40 +45,42 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "glass-header py-3 shadow-lg" : "bg-transparent py-5"
+          scrolled
+            ? "glass-header pt-4 pb-4 sm:pt-5 sm:pb-5 min-h-[84px] shadow-xl"
+            : "bg-transparent pt-7 pb-6 sm:pt-8 sm:pb-7 min-h-[96px]"
         }`}
       >
         <div className="page-container flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Logo - Enlarged Size for High Impact */}
           <Link
             href="/"
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Youssef Hossam Homepage"
           >
-            <div className="relative w-auto h-12 flex items-center transition-transform duration-200 group-hover:scale-105">
+            <div className="relative w-auto h-16 sm:h-18 md:h-20 flex items-center transition-transform duration-200 group-hover:scale-105">
               <Image
                 src={siteConfig.logos.header}
                 alt={siteConfig.brand.name}
-                width={220}
-                height={52}
+                width={360}
+                height={85}
                 priority
-                className="h-10 sm:h-12 w-auto object-contain"
+                className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain"
               />
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 p-1.5 rounded-full bg-[rgba(17,24,39,0.7)] border border-[rgba(255,255,255,0.08)] backdrop-blur-md">
+          {/* Desktop Navigation Links Container with Generous Padding & Border Radius */}
+          <nav className="hidden md:flex items-center gap-2 p-2 sm:px-3 sm:py-2.5 rounded-2xl bg-[rgba(17,24,39,0.82)] border border-[rgba(255,255,255,0.12)] backdrop-blur-lg shadow-xl shadow-black/30">
             {siteConfig.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
                     isActive
-                      ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-primary)]/30 font-semibold"
-                      : "text-[var(--color-text-muted)] hover:text-white hover:bg-white/5"
+                      ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-primary)]/40 font-bold"
+                      : "text-[var(--color-text-muted)] hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -87,22 +89,22 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Controls & CTA (Desktop) */}
+          {/* Controls & CTA (Desktop) - Consistent Height (h-11), Padding & Border-Radius */}
           <div className="hidden md:flex items-center gap-3">
             {/* Language Switcher */}
             <button
               onClick={toggleLang}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-[var(--color-text)] transition-colors"
+              className="h-11 px-4 flex items-center gap-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
               title="Toggle Language"
             >
-              <Globe className="w-3.5 h-3.5 text-[var(--color-primary-light)]" />
+              <Globe className="w-4 h-4 text-[var(--color-primary-light)]" />
               <span>{lang}</span>
             </button>
 
             {/* Dark / Light Mode Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[var(--color-text)] transition-colors"
+              className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
               aria-label="Toggle Theme"
               title="Toggle Theme"
             >
@@ -119,24 +121,24 @@ export default function Header() {
               download="Youssef-Hossam-Software-Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-transparent hover:bg-white/10 text-white border border-[var(--color-accent)] hover:border-white transition-all duration-200 shadow-sm hover:shadow-[var(--color-accent-glow)]"
+              className="h-11 px-5 flex items-center gap-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white border border-[var(--color-primary-light)]/40 hover:border-[var(--color-primary-light)] transition-all duration-200 shadow-md shadow-[var(--color-primary)]/30 hover:shadow-[var(--color-accent-glow)] hover:-translate-y-0.5"
             >
-              <Download className="w-3.5 h-3.5 text-[var(--color-primary-light)]" />
+              <Download className="w-4 h-4 text-white" />
               <span>CV</span>
             </a>
           </div>
 
           {/* Mobile Right Controls: Lang + Theme + Hamburger */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-2.5">
             <button
               onClick={toggleLang}
-              className="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-white"
+              className="h-10 px-3 rounded-xl text-xs font-bold bg-white/5 border border-white/10 text-white"
             >
               {lang}
             </button>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-white/5 border border-white/10 text-white"
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? (
@@ -146,45 +148,55 @@ export default function Header() {
               )}
             </button>
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+              onClick={() => setMobileMenuOpen(true)}
+              className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
               aria-label="Open Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Overlay (Matching header-phone.png.png) */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#0B1120]/95 backdrop-blur-xl flex flex-col justify-between p-6 md:hidden animate-in fade-in duration-200">
-          {/* Top Bar inside Overlay */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-5">
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2"
-            >
-              <Image
-                src={siteConfig.logos.header}
-                alt={siteConfig.brand.name}
-                width={170}
-                height={40}
-                className="h-9 w-auto"
-              />
-            </Link>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-              aria-label="Close Menu"
-            >
-              <X className="w-6 h-6" />
-            </button>
-          </div>
+      {/* Mobile Slide Menu Drawer with Backdrop and Duration Animation */}
+      {/* 1. Backdrop Overlay */}
+      <div
+        onClick={() => setMobileMenuOpen(false)}
+        className={`mobile-backdrop ${mobileMenuOpen ? "open" : ""}`}
+        aria-hidden="true"
+      />
 
-          {/* Center Navigation Links */}
-          <nav className="flex flex-col items-center justify-center gap-6 my-auto">
+      {/* 2. Slide Drawer (Slides in/out smoothly from right with animation-duration) */}
+      <div className={`mobile-drawer ${mobileMenuOpen ? "open" : ""}`}>
+        {/* Top Bar inside Sidebar: Generous Height & Padding from Top, Right, Left */}
+        <div className="flex items-center justify-between border-b border-white/10 pt-8 pb-6 px-6 sm:px-8 min-h-[96px]">
+          <Link
+            href="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2"
+          >
+            <Image
+              src={siteConfig.logos.header}
+              alt={siteConfig.brand.name}
+              width={280}
+              height={66}
+              className="h-13 sm:h-14 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Close Button: Square with Border-Radius & Comfortable Padding */}
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-all duration-200 shadow-sm"
+            aria-label="Close Menu"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Center Navigation Links + CV Button placed right under Contact (Not Full Width) */}
+        <div className="flex-1 flex flex-col items-center justify-center px-6 py-8">
+          <nav className="flex flex-col items-center justify-center gap-6 w-full">
             {siteConfig.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -192,33 +204,54 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-2xl font-bold tracking-tight transition-colors ${
+                  className={`text-2xl font-bold tracking-tight transition-all duration-200 ${
                     isActive
-                      ? "text-[var(--color-primary-light)] font-extrabold"
-                      : "text-white/80 hover:text-white"
+                      ? "text-[var(--color-primary-light)] font-extrabold scale-105"
+                      : "text-white/80 hover:text-white hover:scale-105"
                   }`}
                 >
                   {item.label}
                 </Link>
               );
             })}
-          </nav>
 
-          {/* Bottom Action Button */}
-          <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
+            {/* CV Download Button - Placed Under Contact & NOT Taking Full Width */}
             <a
               href={siteConfig.brand.cvPath}
-              download
+              download="Youssef-Hossam-Software-Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-lg shadow-[var(--color-primary)]/40 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-3 flex items-center justify-center gap-2.5 px-7 py-3 rounded-xl font-bold text-sm uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white border border-[var(--color-primary-light)]/40 shadow-lg shadow-[var(--color-primary)]/40 transition-all duration-200 w-auto min-w-[180px] max-w-[240px]"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 text-white" />
               <span>Download CV</span>
             </a>
+          </nav>
+        </div>
+
+        {/* Bottom Bar: Extra Controls for Mobile Drawer */}
+        <div className="border-t border-white/10 p-6 flex items-center justify-between text-xs text-[var(--color-text-dim)]">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Available for Opportunities</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleLang}
+              className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white font-semibold"
+            >
+              {lang}
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-white"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

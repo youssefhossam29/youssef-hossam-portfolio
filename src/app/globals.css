@@ -248,3 +248,53 @@ body {
 .pulse-whatsapp {
   animation: pulseGlow 2.5s infinite;
 }
+
+/* ==========================================
+   Mobile Slide Menu Drawer System
+   ========================================== */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 17, 32, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.mobile-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: #0B1120;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+@media (min-width: 640px) {
+  .mobile-drawer {
+    max-width: 400px;
+  }
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
