@@ -34,265 +34,273 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate instantaneous clean submission
     setIsSubmitted(true);
   };
 
   return (
-    <div className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Page Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Start a Conversation</span>
-        </div>
+    <div className="relative">
+      <section className="page-section">
+        <div className="page-container">
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
-          Let&apos;s Talk For Your Next Projects
-        </h1>
+          {/* Page Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Start a Conversation</span>
+            </div>
 
-        <p className="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
-          Whether you have a technical opportunity, need architectural consulting for your backend, or want to launch a high-converting web store, I&apos;m ready to connect.
-        </p>
-      </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+              Let&apos;s Talk For Your Next Projects
+            </h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        {/* Left Column: Direct Contact Info (Matching contact.png) */}
-        <div className="lg:col-span-5 space-y-8">
-          <div className="glass-card p-8 space-y-6">
-            <h2 className="text-2xl font-bold text-white">Contact Information</h2>
-            <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
-              Feel free to reach out via email or phone. I prioritize fast responses, typically replying within a few hours.
+            <p className="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
+              Whether you have a technical opportunity, need architectural consulting for your backend, or want to launch a high-converting web store, I&apos;m ready to connect.
             </p>
+          </div>
 
-            <div className="space-y-4 pt-2">
-              {/* Location Card */}
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="p-2.5 rounded-xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
+          {/* Two-Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+            {/* Left: Contact Info */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="glass-card p-8 space-y-7">
                 <div>
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)]">
-                    Location
-                  </h4>
-                  <p className="text-sm font-semibold text-white mt-0.5">
-                    {siteConfig.brand.location}
+                  <h2 className="text-2xl font-bold text-white mb-2">Contact Information</h2>
+                  <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+                    Feel free to reach out via email or phone. I prioritize fast responses, typically replying within a few hours.
                   </p>
                 </div>
-              </div>
 
-              {/* Email Card with One-Click Copy */}
-              <div className="flex items-start justify-between gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)]">
-                      Email Address
-                    </h4>
-                    <a
-                      href={`mailto:${siteConfig.brand.email}`}
-                      className="text-sm font-semibold text-white hover:text-[var(--color-primary-light)] transition-colors mt-0.5 block break-all"
-                    >
-                      {siteConfig.brand.email}
-                    </a>
-                  </div>
-                </div>
-
-                <button
-                  onClick={handleCopyEmail}
-                  className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors"
-                  title="Copy email to clipboard"
-                  aria-label="Copy email"
-                >
-                  {copied ? (
-                    <Check className="w-4 h-4 text-emerald-400" />
-                  ) : (
-                    <Copy className="w-4 h-4 text-[var(--color-text-muted)]" />
-                  )}
-                </button>
-              </div>
-
-              {/* Phone / WhatsApp Card */}
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)]">
-                    Phone & WhatsApp
-                  </h4>
-                  <a
-                    href={siteConfig.brand.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-white hover:text-emerald-400 transition-colors mt-0.5 block"
-                  >
-                    {siteConfig.brand.phone}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Channels */}
-            <div className="pt-4 border-t border-white/5">
-              <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)] mb-3">
-                Follow My Engineering Work
-              </h4>
-              <div className="flex items-center gap-2.5">
-                <a
-                  href={siteConfig.social.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
-                  aria-label="GitHub Profile"
-                >
-                  <GithubIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href={siteConfig.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
-                  aria-label="LinkedIn Profile"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href={siteConfig.social.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all"
-                  aria-label="WhatsApp Message"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column: Interactive Form Card */}
-        <div className="lg:col-span-7">
-          <div className="glass-card p-8 sm:p-10 border border-white/10 shadow-2xl relative">
-            {isSubmitted ? (
-              <div className="py-16 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
-                  <CheckCircle className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
-                <p className="text-sm text-[var(--color-text-muted)] max-w-md mx-auto">
-                  Thank you for reaching out, {formData.fullName}. I have received your message and will review it promptly.
-                </p>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="mt-4 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/15 text-white transition-colors"
-                >
-                  Send Another Message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Full Name */}
-                  <div className="space-y-2">
-                    <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
-                      Full Name <span className="text-[var(--color-primary-light)]">*</span>
-                    </label>
-                    <input
-                      id="fullName"
-                      type="text"
-                      required
-                      placeholder="e.g. John Doe"
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
-                    />
+                <div className="space-y-4">
+                  {/* Location */}
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
+                    <div className="p-3 rounded-xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)] mb-1">
+                        Location
+                      </h4>
+                      <p className="text-sm font-semibold text-white">
+                        {siteConfig.brand.location}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Email */}
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
-                      Email Address <span className="text-[var(--color-primary-light)]">*</span>
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      required
-                      placeholder="john@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Phone */}
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
-                      Phone / WhatsApp Number
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      placeholder="+1 (555) 000-0000"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
-                    />
-                  </div>
-
-                  {/* Subject Selection */}
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
-                      Subject Inquiry <span className="text-[var(--color-primary-light)]">*</span>
-                    </label>
-                    <select
-                      id="subject"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-white focus:outline-none focus:border-[var(--color-primary-light)] transition-all text-sm"
+                  <div className="flex items-start justify-between gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/8">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] shrink-0">
+                        <Mail className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)] mb-1">
+                          Email Address
+                        </h4>
+                        <a
+                          href={`mailto:${siteConfig.brand.email}`}
+                          className="text-sm font-semibold text-white hover:text-[var(--color-primary-light)] transition-colors break-all"
+                        >
+                          {siteConfig.brand.email}
+                        </a>
+                      </div>
+                    </div>
+                    <button
+                      onClick={handleCopyEmail}
+                      className="p-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors shrink-0"
+                      title="Copy email"
+                      aria-label="Copy email"
                     >
-                      <option value="Full-Time Backend Opportunity">Full-Time Backend Opportunity</option>
-                      <option value="Custom WordPress / E-Commerce Project">Custom WordPress / E-Commerce Project</option>
-                      <option value="Database / API Architectural Consultation">Database / API Architectural Consultation</option>
-                      <option value="Freelance Contract Collaboration">Freelance Contract Collaboration</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                    </select>
+                      {copied ? (
+                        <Check className="w-4 h-4 text-emerald-400" />
+                      ) : (
+                        <Copy className="w-4 h-4 text-[var(--color-text-muted)]" />
+                      )}
+                    </button>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
+                    <div className="p-3 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)] mb-1">
+                        Phone & WhatsApp
+                      </h4>
+                      <a
+                        href={siteConfig.brand.whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-white hover:text-emerald-400 transition-colors"
+                      >
+                        {siteConfig.brand.phone}
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                {/* Message */}
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
-                    Project Details & Message <span className="text-[var(--color-primary-light)]">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    placeholder="Tell me about your project, timeline, tech stack, and goals..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm resize-none"
-                  />
+                {/* Social Links */}
+                <div className="pt-4 border-t border-white/8">
+                  <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)] mb-4">
+                    Follow My Engineering Work
+                  </h4>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={siteConfig.social.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
+                      aria-label="GitHub Profile"
+                    >
+                      <GithubIcon className="w-4 h-4" />
+                    </a>
+                    <a
+                      href={siteConfig.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
+                      aria-label="LinkedIn Profile"
+                    >
+                      <LinkedinIcon className="w-4 h-4" />
+                    </a>
+                    <a
+                      href={siteConfig.social.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all"
+                      aria-label="WhatsApp"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-xl shadow-[var(--color-primary)]/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-                >
-                  <span>Send Us Message</span>
-                  <Send className="w-4 h-4" />
-                </button>
-              </form>
-            )}
+            {/* Right: Contact Form */}
+            <div className="lg:col-span-7">
+              <div className="glass-card p-8 sm:p-10 border border-white/10 shadow-2xl">
+                {isSubmitted ? (
+                  <div className="py-16 text-center space-y-5">
+                    <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
+                      <CheckCircle className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
+                    <p className="text-sm text-[var(--color-text-muted)] max-w-md mx-auto">
+                      Thank you for reaching out, {formData.fullName}. I have received your message and will review it promptly.
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-4 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/15 text-white transition-colors"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-7">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {/* Full Name */}
+                      <div className="space-y-2">
+                        <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
+                          Full Name <span className="text-[var(--color-primary-light)]">*</span>
+                        </label>
+                        <input
+                          id="fullName"
+                          type="text"
+                          required
+                          placeholder="e.g. John Doe"
+                          value={formData.fullName}
+                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                          className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                        />
+                      </div>
+
+                      {/* Email */}
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
+                          Email Address <span className="text-[var(--color-primary-light)]">*</span>
+                        </label>
+                        <input
+                          id="email"
+                          type="email"
+                          required
+                          placeholder="john@company.com"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {/* Phone */}
+                      <div className="space-y-2">
+                        <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
+                          Phone / WhatsApp
+                        </label>
+                        <input
+                          id="phone"
+                          type="tel"
+                          placeholder="+1 (555) 000-0000"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                        />
+                      </div>
+
+                      {/* Subject */}
+                      <div className="space-y-2">
+                        <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
+                          Subject <span className="text-[var(--color-primary-light)]">*</span>
+                        </label>
+                        <select
+                          id="subject"
+                          value={formData.subject}
+                          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                          className="w-full px-5 py-3.5 rounded-xl bg-[#111827] border border-white/10 text-white focus:outline-none focus:border-[var(--color-primary-light)] transition-all text-sm"
+                        >
+                          <option value="Full-Time Backend Opportunity">Full-Time Backend Opportunity</option>
+                          <option value="Custom WordPress / E-Commerce Project">Custom WordPress / E-Commerce Project</option>
+                          <option value="Database / API Architectural Consultation">Database / API Consultation</option>
+                          <option value="Freelance Contract Collaboration">Freelance Contract</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Message */}
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
+                        Project Details <span className="text-[var(--color-primary-light)]">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        required
+                        rows={5}
+                        placeholder="Tell me about your project, timeline, tech stack, and goals..."
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm resize-none"
+                      />
+                    </div>
+
+                    {/* Submit */}
+                    <button
+                      type="submit"
+                      className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-xl shadow-[var(--color-primary)]/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
+                    >
+                      <span>Send Message</span>
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
           </div>
+
         </div>
-      </div>
+      </section>
     </div>
   );
 }

@@ -48,7 +48,7 @@ export default function Header() {
           scrolled ? "glass-header py-3 shadow-lg" : "bg-transparent py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="page-container flex items-center justify-between">
           {/* Brand Logo */}
           <Link
             href="/"

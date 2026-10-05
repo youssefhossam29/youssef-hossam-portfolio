@@ -182,6 +182,59 @@ body {
   animation-play-state: paused;
 }
 
+/* ==========================================
+   LAYOUT SYSTEM — Page Container & Sections
+   ========================================== */
+
+/* Unified 1280px max-width container with horizontal padding */
+.page-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* Section vertical rhythm */
+.page-section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+/* Section heading block */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* Floating WhatsApp Pulse Animation */
 @keyframes pulseGlow {
   0%, 100% {
