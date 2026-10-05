@@ -1,1 +1,196 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+  /* Brand Core Colors (From siteConfig) */
+  --color-primary: #0649C1;
+  --color-primary-hover: #2563EB;
+  --color-primary-light: #3B82F6;
+  --color-accent: #676CDB;
+  --color-accent-hover: #7B80E6;
+  --color-accent-glow: rgba(103, 108, 219, 0.35);
+  --color-lavender-tint: #EDEBFF;
+
+  /* Dark Theme Colors (Default) */
+  --color-bg: #0B1120;
+  --color-surface: #111827;
+  --color-surface-elevated: #1E293B;
+  --color-surface-glass: rgba(17, 24, 39, 0.65);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-glow: rgba(103, 108, 219, 0.3);
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+
+  /* Functional & Semantic */
+  --color-success: #10B981;
+  --color-whatsapp: #25D366;
+  --color-danger: #EF4444;
+
+  /* Glassmorphism System */
+  --glass-header-bg: rgba(11, 17, 32, 0.82);
+  --glass-card-bg: rgba(17, 24, 39, 0.72);
+  --glass-card-hover: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 16px;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Light Theme Variables (Ready for toggling) */
+[data-theme="light"] {
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F1F5F9;
+  --color-surface-glass: rgba(255, 255, 255, 0.8);
+  --color-border: #E2E8F0;
+  --color-border-glow: rgba(6, 73, 193, 0.2);
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
+  --color-text-dim: #94A3B8;
+  --glass-header-bg: rgba(255, 255, 255, 0.85);
+  --glass-card-bg: rgba(255, 255, 255, 0.90);
+  --glass-card-hover: #FFFFFF;
+  --glass-border: #E2E8F0;
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Modern Glassmorphism Classes */
+.glass-header {
+  background: var(--glass-header-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: var(--glass-card-hover);
+  border-color: var(--color-border-glow);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4), 0 0 24px -4px var(--color-accent-glow);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-accent);
+}
+
+/* Glow Utilities */
+.glow-primary {
+  box-shadow: 0 0 28px -4px rgba(6, 73, 193, 0.5);
+}
+
+.glow-accent {
+  box-shadow: 0 0 28px -4px var(--color-accent-glow);
+}
+
+.glow-text {
+  text-shadow: 0 0 24px rgba(103, 108, 219, 0.4);
+}
+
+/* Gradient Background Effects */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(6, 73, 193, 0.18), transparent 60%);
+}
+
+.bg-radial-accent {
+  background: radial-gradient(circle at 100% 50%, rgba(103, 108, 219, 0.12), transparent 50%);
+}
+
+/* Tech Marquee Infinite Animations */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 35s linear infinite;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: scrollRight 35s linear infinite;
+}
+
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+/* Floating WhatsApp Pulse Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-whatsapp {
+  animation: pulseGlow 2.5s infinite;
+}
