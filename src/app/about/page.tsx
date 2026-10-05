@@ -45,6 +45,7 @@ export default function AboutPage() {
                 alt={siteConfig.brand.name}
                 fill
                 priority
+                sizes="(max-width: 768px) 280px, 340px"
                 className="object-contain p-2 hover:scale-105 transition-transform duration-500"
               />
             </div>

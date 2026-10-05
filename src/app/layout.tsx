@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
         suppressHydrationWarning
         className="min-h-screen bg-[#0B1120] text-[#F8FAFC] flex flex-col justify-between selection:bg-[var(--color-primary)] selection:text-white"
