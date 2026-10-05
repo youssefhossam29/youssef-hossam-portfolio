@@ -34,8 +34,8 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
+          {/* Category Filter (20px gap between category elements) */}
+          <div className="flex flex-wrap items-center justify-center gap-5 mb-14">
             {projectCategories.map((category) => {
               const isSelected = selectedCategory === category;
               const count =
@@ -73,10 +73,12 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          {/* Summary Bar */}
-          <div className="mt-14 p-6 rounded-2xl glass-card text-center text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2.5">
-              <Layers className="w-4 h-4 text-[var(--color-primary-light)]" />
+          {/* Summary Bar (20px spacing) */}
+          <div className="mt-14 p-6 sm:p-7 rounded-2xl glass-card text-center text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div className="flex items-center gap-3">
+              <span className="p-1.5 rounded-lg bg-[var(--color-primary)]/15 text-[var(--color-primary-light)] shrink-0 border border-[var(--color-primary)]/20">
+                <Layers className="w-4 h-4" />
+              </span>
               <span>
                 Showing <strong className="text-white">{filteredProjects.length}</strong> of{" "}
                 <strong className="text-white">{projectsData.length}</strong> enterprise web applications

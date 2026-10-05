@@ -59,8 +59,8 @@ export const siteConfig = {
     badgePrimary: "/logo/youssef-badge-primary-new.png",
     badgeAccent: "/logo/youssef-badge-accent-new.png",
     badgeDual: "/logo/youssef-badge-dual-new.png",
-    // Reference / Hero Art
-    heroArt: "/images/home-persolan-image.png",
+    // Reference / Hero Art (Youssef Hossam Modular Grid Portrait)
+    heroArt: "/images/youssef-hero-grid.png",
   },
 
   // Design Tokens (Colors, Typography, Glassmorphism, Radii)

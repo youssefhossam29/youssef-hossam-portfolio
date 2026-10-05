@@ -21,9 +21,9 @@ export default function Footer() {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--color-accent)]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative page-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 pb-12 border-b border-white/10">
           {/* Column 1: Brand & Slogan */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <Link href="/" className="inline-block">
               <Image
                 src={siteConfig.logos.header}
@@ -45,11 +45,11 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-4">
+          <div className="space-y-5">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
               Quick Navigation
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-5">
               {siteConfig.nav.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -64,18 +64,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Direct Contact
+          {/* Column 3: Direct Contact & Social Links (Combined with 20px gaps and padded icons) */}
+          <div className="space-y-5">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">
+              Direct Contact & Networks
             </h4>
-            <ul className="space-y-3 text-sm text-[var(--color-text-muted)]">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[var(--color-primary-light)] shrink-0 mt-0.5" />
+            <ul className="space-y-5 text-sm text-[var(--color-text-muted)]">
+              <li className="flex items-start gap-3">
+                <span className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-[var(--color-primary-light)] shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4" />
+                </span>
                 <span>{siteConfig.brand.location}</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[var(--color-primary-light)] shrink-0" />
+              <li className="flex items-center gap-3">
+                <span className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-[var(--color-primary-light)] shrink-0">
+                  <Mail className="w-4 h-4" />
+                </span>
                 <a
                   href={`mailto:${siteConfig.brand.email}`}
                   className="hover:text-white transition-colors"
@@ -83,8 +87,10 @@ export default function Footer() {
                   {siteConfig.brand.email}
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[var(--color-primary-light)] shrink-0" />
+              <li className="flex items-center gap-3">
+                <span className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-[var(--color-primary-light)] shrink-0">
+                  <Phone className="w-4 h-4" />
+                </span>
                 <a
                   href={`tel:${siteConfig.brand.phone.replace(/[^0-9+]/g, "")}`}
                   className="hover:text-white transition-colors"
@@ -93,51 +99,45 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
 
-          {/* Column 4: Professional Networks */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Connect Professionally
-            </h4>
-            <p className="text-sm text-[var(--color-text-muted)] mb-4">
-              Reach out for enterprise consulting, high-impact backend contracts, or full-time roles.
-            </p>
-            <div className="flex items-center gap-2.5">
-              <a
-                href={siteConfig.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
-                aria-label="GitHub Profile"
-              >
-                <GithubIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
-                aria-label="LinkedIn Profile"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-emerald-500 transition-all text-emerald-400"
-                aria-label="WhatsApp Message"
-              >
-                <MessageCircle className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.social.email}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all"
-                aria-label="Direct Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
+            {/* Padded Social Icons with 20px gap and rounded-xl */}
+            <div className="pt-4 border-t border-white/10">
+              <div className="flex items-center gap-5">
+                <a
+                  href={siteConfig.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
+                  aria-label="GitHub Profile"
+                >
+                  <GithubIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={siteConfig.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={siteConfig.social.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
+                  aria-label="WhatsApp Message"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <a
+                  href={siteConfig.social.email}
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
+                  aria-label="Direct Email"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

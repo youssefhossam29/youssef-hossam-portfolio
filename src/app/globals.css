@@ -389,4 +389,46 @@ body {
   padding: 28px; /* 28px (Strictly capped within 30px) */
 }
 
+/* Container Internal Spacing (20px standard) */
+.container-gap-20 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-gap-20-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Icon System: Padding & Border Radius */
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.icon-box-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.icon-box-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
 

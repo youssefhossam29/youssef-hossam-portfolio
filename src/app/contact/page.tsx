@@ -61,9 +61,9 @@ export default function ContactPage() {
           {/* Two-Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
-            {/* Left: Contact Info (Padding: 24px - 28px within 15-30px) */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="glass-card p-6 sm:p-7 space-y-7">
+            {/* Left: Contact Info (Padding: 24px - 28px within 15-30px, 20px internal spacing) */}
+            <div className="lg:col-span-5 space-y-5">
+              <div className="glass-card p-6 sm:p-7 space-y-5">
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-2">Contact Information</h2>
                   <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
@@ -71,10 +71,10 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-5">
                   {/* Location */}
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
-                    <div className="p-3 rounded-xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] shrink-0">
+                    <div className="p-3 rounded-xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] shrink-0 border border-[var(--color-primary)]/30">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <div className="flex items-start justify-between gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/8">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] shrink-0">
+                      <div className="p-3 rounded-xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] shrink-0 border border-[var(--color-accent)]/30">
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                     </div>
                     <button
                       onClick={handleCopyEmail}
-                      className="p-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors shrink-0"
+                      className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white transition-colors shrink-0 border border-white/10"
                       title="Copy email"
                       aria-label="Copy email"
                     >
@@ -121,7 +121,7 @@ export default function ContactPage() {
 
                   {/* Phone */}
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
-                    <div className="p-3 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
+                    <div className="p-3 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 border border-emerald-500/30">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -140,17 +140,17 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Social Links */}
-                <div className="pt-4 border-t border-white/8">
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)] mb-4">
+                {/* Social Links (20px gap, padded icons with rounded-xl) */}
+                <div className="pt-4 border-t border-white/8 space-y-4">
+                  <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)]">
                     Follow My Engineering Work
                   </h4>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-5">
                     <a
                       href={siteConfig.social.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
+                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
                       aria-label="GitHub Profile"
                     >
                       <GithubIcon className="w-4 h-4" />
@@ -159,7 +159,7 @@ export default function ContactPage() {
                       href={siteConfig.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
+                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
                       aria-label="LinkedIn Profile"
                     >
                       <LinkedinIcon className="w-4 h-4" />
@@ -168,7 +168,7 @@ export default function ContactPage() {
                       href={siteConfig.social.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all"
+                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
                       aria-label="WhatsApp"
                     >
                       <MessageCircle className="w-4 h-4" />
@@ -178,12 +178,12 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: Contact Form (Padding: 24px - 30px, strictly within 15-30px) */}
+            {/* Right: Contact Form (Padding: 24px - 30px, strictly within 15-30px, 20px internal spacing) */}
             <div className="lg:col-span-7">
-              <div className="glass-card p-6 sm:p-7 md:p-7.5 border border-white/10 shadow-2xl">
+              <div className="glass-card p-6 sm:p-7 md:p-7.5 border border-white/10 shadow-2xl space-y-5">
                 {isSubmitted ? (
                   <div className="py-16 text-center space-y-5">
-                    <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
+                    <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
                       <CheckCircle className="w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
@@ -198,8 +198,8 @@ export default function ContactPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-7">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {/* Full Name */}
                       <div className="space-y-2">
                         <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
@@ -233,7 +233,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {/* Phone */}
                       <div className="space-y-2">
                         <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">

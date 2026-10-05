@@ -29,8 +29,8 @@ export default function HomePage() {
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+            {/* Left Content (20px spacing between elements inside container) */}
+            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
               {/* Status Pill */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -54,8 +54,8 @@ export default function HomePage() {
                 I&apos;m passionate about programming and aim to utilize my expertise in web development with Laravel and WordPress to deliver high-performance, scalable, and efficient solutions.
               </p>
 
-              {/* CTA Buttons - Standardized with Unified Padding, Font Size & Hover Animation */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              {/* CTA Buttons (20px gap) */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5">
                 <Link
                   href="/contact"
                   className="btn-base btn-primary"
@@ -76,8 +76,8 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Social Strip */}
-              <div className="flex items-center justify-center lg:justify-start gap-3">
+              {/* Social Strip (20px gap) */}
+              <div className="flex items-center justify-center lg:justify-start gap-5">
                 <span className="text-xs uppercase tracking-wider font-semibold text-[var(--color-text-dim)]">
                   Find Me:
                 </span>
@@ -118,13 +118,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Hero Image Container (Padding strictly between 15-30px) */}
+            {/* Right: Hero Image Container (No overflow-hidden on outer card so floating badges are 100% visible) */}
             <div className="lg:col-span-5 relative flex items-center justify-center">
               <div className="absolute w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] rounded-full border border-white/8 pointer-events-none" />
               <div className="absolute w-[270px] h-[270px] sm:w-[330px] sm:h-[330px] rounded-full border border-[var(--color-primary)]/20 pointer-events-none" />
 
-              <div className="relative w-[290px] sm:w-[360px] lg:w-[400px] aspect-[4/5] rounded-3xl overflow-hidden glass-card p-4 shadow-2xl">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0F172A]">
+              <div className="relative w-[290px] sm:w-[360px] lg:w-[400px] aspect-[4/5] rounded-3xl glass-card p-4 shadow-2xl border border-white/20">
+                {/* Inner Image Container (Only image has overflow-hidden) */}
+                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0A0E1A] border border-white/10 shadow-inner">
                   <Image
                     src={siteConfig.logos.heroArt}
                     alt={siteConfig.brand.name}
@@ -135,14 +136,16 @@ export default function HomePage() {
                   />
                 </div>
 
-                {/* Floating badges */}
-                <div className="absolute -left-6 top-12 px-4 py-2.5 rounded-xl bg-[#111827]/95 border border-white/15 backdrop-blur-md shadow-xl flex items-center gap-2.5 text-xs font-bold text-white">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF2D20]" />
-                  <span>Laravel Expert</span>
+                {/* Floating Badge 1: Laravel Expert (Generous padding, high contrast glassmorphism, glowing indicator) */}
+                <div className="absolute -left-3 sm:-left-8 top-8 sm:top-12 z-20 px-6 py-3.5 rounded-2xl bg-[#131D31]/95 border border-white/25 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.75)] flex items-center gap-3.5 text-xs sm:text-sm font-bold text-white whitespace-nowrap transition-transform hover:-translate-y-1">
+                  <span className="w-3 h-3 rounded-full bg-[#FF2D20] shadow-[0_0_12px_#FF2D20] shrink-0" />
+                  <span className="tracking-wide">Laravel Expert</span>
                 </div>
-                <div className="absolute -right-6 bottom-14 px-4 py-2.5 rounded-xl bg-[#111827]/95 border border-white/15 backdrop-blur-md shadow-xl flex items-center gap-2.5 text-xs font-bold text-white">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#21759B]" />
-                  <span>WordPress & WooCommerce</span>
+
+                {/* Floating Badge 2: WordPress & WooCommerce (Generous padding, high contrast glassmorphism, glowing indicator) */}
+                <div className="absolute -right-3 sm:-right-8 bottom-8 sm:bottom-12 z-20 px-6 py-3.5 rounded-2xl bg-[#131D31]/95 border border-white/25 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.75)] flex items-center gap-3.5 text-xs sm:text-sm font-bold text-white whitespace-nowrap transition-transform hover:-translate-y-1">
+                  <span className="w-3 h-3 rounded-full bg-[#00749C] shadow-[0_0_12px_#00A4D6] shrink-0" />
+                  <span className="tracking-wide">WordPress & WooCommerce</span>
                 </div>
               </div>
             </div>
@@ -166,52 +169,60 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Pillar 1 (Container padding: 24px - 28px, strictly within 15-30px) */}
-            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] flex items-center justify-center mb-6 border border-[var(--color-primary)]/30 group-hover:scale-110 transition-transform">
-                <Server className="w-7 h-7" />
+            {/* Pillar 1 (Container padding: 24px - 28px, strictly within 15-30px, 20px internal spacing) */}
+            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group space-y-5 flex flex-col justify-between">
+              <div className="space-y-5">
+                <div className="w-14 h-14 rounded-2xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] flex items-center justify-center border border-[var(--color-primary)]/30 group-hover:scale-110 transition-transform p-3">
+                  <Server className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">
+                  Backend Architecture & RESTful APIs
+                </h3>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+                  Engineering fault-tolerant server-side solutions with Laravel and PHP. Focusing on database optimization, Redis cache hierarchies, microservices, and airtight authentication.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Backend Architecture & RESTful APIs
-              </h3>
-              <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-6">
-                Engineering fault-tolerant server-side solutions with Laravel and PHP. Focusing on database optimization, Redis cache hierarchies, microservices, and airtight authentication.
-              </p>
-              <ul className="space-y-3 text-sm text-[var(--color-text)]">
+              <ul className="space-y-5 pt-3 border-t border-white/5 text-sm text-[var(--color-text)]">
                 {[
                   "RESTful APIs with automated test coverage",
                   "Relational MySQL schema design & query indexing",
                   "Redis caching, queue jobs, and real-time WebSockets",
                   "OWASP security hardening & JWT / Sanctum auth",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-400 shrink-0 border border-emerald-500/20">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Pillar 2 (Container padding: 24px - 28px, strictly within 15-30px) */}
-            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center mb-6 border border-[var(--color-accent)]/30 group-hover:scale-110 transition-transform">
-                <Layout className="w-7 h-7" />
+            {/* Pillar 2 (Container padding: 24px - 28px, strictly within 15-30px, 20px internal spacing) */}
+            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group space-y-5 flex flex-col justify-between">
+              <div className="space-y-5">
+                <div className="w-14 h-14 rounded-2xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center border border-[var(--color-accent)]/30 group-hover:scale-110 transition-transform p-3">
+                  <Layout className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">
+                  Custom WordPress & WooCommerce Stores
+                </h3>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+                  Building bespoke, blazing-fast WordPress solutions without bloated visual builder dependencies. Engineered for top conversion rates, seamless payment gateways, and 90+ PageSpeed.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Custom WordPress & WooCommerce Stores
-              </h3>
-              <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-6">
-                Building bespoke, blazing-fast WordPress solutions without bloated visual builder dependencies. Engineered for top conversion rates, seamless payment gateways, and 90+ PageSpeed.
-              </p>
-              <ul className="space-y-3 text-sm text-[var(--color-text)]">
+              <ul className="space-y-5 pt-3 border-t border-white/5 text-sm text-[var(--color-text)]">
                 {[
                   "Custom theme & plugin development with clean PHP",
                   "High-converting WooCommerce checkouts & payment APIs",
                   "Bespoke ACF Pro custom fields & dynamic architectures",
                   "Core Web Vitals optimization achieving 90+ speed scores",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-400 shrink-0 border border-emerald-500/20">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -259,18 +270,18 @@ export default function HomePage() {
       {/* ================= 5. CALL TO ACTION ================= */}
       <section className="page-section">
         <div className="page-container">
-          {/* CTA Box Container: padding 24px - 30px, capped at 30px */}
+          {/* CTA Box Container: padding 24px - 30px, capped at 30px, 20px element spacing */}
           <div className="relative rounded-3xl p-6 sm:p-7 md:p-7.5 overflow-hidden glass-card text-center border border-white/15">
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/20 via-transparent to-[var(--color-accent)]/20 pointer-events-none" />
 
-            <div className="relative max-w-2xl mx-auto space-y-6">
+            <div className="relative max-w-2xl mx-auto space-y-5">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
                 Ready to Engineer Your Next Digital Breakthrough?
               </h2>
               <p className="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
                 Whether you need an enterprise backend architect for your team, or a high-converting web store for your brand — let&apos;s build it with precision.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+              <div className="flex flex-wrap items-center justify-center gap-5 pt-3">
                 <Link
                   href="/contact"
                   className="btn-base btn-primary"
