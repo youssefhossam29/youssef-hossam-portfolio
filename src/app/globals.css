@@ -460,4 +460,41 @@ body {
   transition: all 0.2s ease;
 }
 
+/* ==========================================
+   STANDARDIZED BADGE SYSTEM
+   Ensures text never touches or feels cramped against borders.
+   ========================================== */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.badge-pill-primary {
+  background-color: rgba(6, 73, 193, 0.15);
+  color: var(--color-primary-light);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+}
+
+.badge-pill-accent {
+  background-color: rgba(103, 108, 219, 0.15);
+  color: var(--color-accent);
+  border: 1px solid rgba(103, 108, 219, 0.28);
+}
+
+.badge-pill-success {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+
 

@@ -20,7 +20,7 @@ export default function ProjectsPage() {
 
           {/* Page Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-5">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Proven Track Record</span>
             </div>

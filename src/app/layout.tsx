@@ -92,7 +92,7 @@ export default function RootLayout({
         className="min-h-screen bg-[#0B1120] text-[#F8FAFC] flex flex-col justify-between selection:bg-[var(--color-primary)] selection:text-white"
       >
         <Header />
-        <main className="flex-grow pt-18 sm:pt-20">{children}</main>
+        <main className="flex-grow pt-24 sm:pt-28">{children}</main>
         <FloatingWhatsApp />
         <Footer />
       </body>

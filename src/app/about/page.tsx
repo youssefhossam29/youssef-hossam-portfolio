@@ -63,7 +63,7 @@ export default function AboutPage() {
 
             {/* Bio Column */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Engineering Profile</span>
               </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
       <section className="page-section">
         <div className="page-container">
           <div className="section-header">
-            <span className="inline-block self-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20">
+            <span className="inline-block self-center px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/25">
               Competencies
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
@@ -161,7 +161,7 @@ export default function AboutPage() {
       <section className="page-section">
         <div className="page-container">
           <div className="section-header">
-            <span className="inline-block self-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+            <span className="inline-block self-center px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
               Work Experience
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
@@ -239,7 +239,7 @@ export default function AboutPage() {
       <section className="page-section">
         <div className="page-container">
           <div className="section-header">
-            <span className="inline-block self-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <span className="inline-block self-center px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
               Academic Credentials
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
@@ -285,7 +285,7 @@ export default function AboutPage() {
       <section className="page-section">
         <div className="page-container">
           <div className="section-header">
-            <span className="inline-block self-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20">
+            <span className="inline-block self-center px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/25">
               Frequently Asked Questions
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">

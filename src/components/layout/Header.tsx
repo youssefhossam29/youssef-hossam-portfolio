@@ -46,41 +46,41 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "glass-header py-3 sm:py-3.5 min-h-[66px] shadow-lg shadow-black/25"
-            : "bg-transparent py-4 sm:py-5 min-h-[76px]"
+            ? "glass-header py-3.5 sm:py-4 min-h-[72px] shadow-lg shadow-black/25"
+            : "bg-transparent py-4 sm:py-5 min-h-[80px]"
         }`}
       >
-        <div className="page-container flex items-center justify-between">
-          {/* Brand Logo */}
+        <div className="page-container flex items-center justify-between gap-4 sm:gap-6">
+          {/* Brand Logo - Increased size, responsive, preserves aspect ratio */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center group focus:outline-none shrink-0"
             aria-label="Youssef Hossam Homepage"
           >
-            <div className="relative w-auto h-10 sm:h-11 md:h-12 flex items-center transition-transform duration-200 group-hover:scale-105">
+            <div className="relative flex items-center transition-transform duration-200 group-hover:scale-105">
               <Image
                 src={siteConfig.logos.header}
                 alt={siteConfig.brand.name}
-                width={260}
-                height={60}
+                width={280}
+                height={70}
                 priority
-                className="h-9 sm:h-10 md:h-11 w-auto object-contain"
+                className="h-10 sm:h-11 md:h-12 lg:h-[50px] w-auto object-contain"
               />
             </div>
           </Link>
 
-          {/* Desktop Navigation Links Container */}
-          <nav className="hidden md:flex items-center gap-1.5 p-1.5 rounded-2xl bg-[rgba(17,24,39,0.85)] border border-white/10 backdrop-blur-xl shadow-lg shadow-black/25">
+          {/* Desktop Navigation Links Container: Each item treated as a distinct button */}
+          <nav className="hidden md:flex items-center gap-2 p-2 rounded-2xl bg-[rgba(17,24,39,0.85)] border border-white/10 backdrop-blur-xl shadow-lg shadow-black/25">
             {siteConfig.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                  className={`px-4.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border ${
                     isActive
-                      ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-primary)]/40 font-bold"
-                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                      ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-primary)]/40 font-bold border-white/15"
+                      : "text-slate-300 hover:text-white hover:bg-white/10 border-transparent hover:border-white/10"
                   }`}
                 >
                   {item.label}
@@ -89,17 +89,16 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Controls & CTA (Desktop) */}
-          <div className="hidden md:flex items-center gap-2.5">
-            {/* Language Switcher */}
+          {/* Controls & CTA (Desktop): Vertically centered, balanced on horizontal axis */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Language Switcher - Icon only with accessible aria-label/title */}
             <button
               onClick={toggleLang}
-              className="h-10 px-3 flex items-center gap-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
-              title="Toggle Language"
-              aria-label="Toggle Language"
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
+              title={lang === "EN" ? "Switch language to Arabic" : "تغيير اللغة إلى الإنجليزية"}
+              aria-label={lang === "EN" ? "Switch to Arabic language" : "Switch to English language"}
             >
-              <Globe className="w-3.5 h-3.5 text-[var(--color-primary-light)]" />
-              <span>{lang}</span>
+              <Globe className="w-4 h-4 text-[var(--color-primary-light)]" />
             </button>
 
             {/* Dark / Light Mode Toggle */}
@@ -122,20 +121,22 @@ export default function Header() {
               download="Youssef-Hossam-Software-Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-base btn-primary !py-2.5 !px-5"
+              className="h-10 px-5 inline-flex items-center justify-center gap-2 rounded-xl text-sm font-bold bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white border border-white/20 shadow-md shadow-[var(--color-primary)]/25 transition-all hover:-translate-y-0.5"
             >
               <Download className="w-4 h-4 text-white" />
               <span>Download CV</span>
             </a>
           </div>
 
-          {/* Mobile Right Controls: Lang + Theme + Hamburger */}
-          <div className="flex md:hidden items-center gap-2.5">
+          {/* Mobile Right Controls: Lang (icon) + Theme + Hamburger */}
+          <div className="flex md:hidden items-center gap-2">
             <button
               onClick={toggleLang}
-              className="h-10 px-3 rounded-xl text-xs font-bold bg-white/5 border border-white/10 text-white"
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white"
+              title="Switch Language"
+              aria-label="Switch Language"
             >
-              {lang}
+              <Globe className="w-4 h-4 text-[var(--color-primary-light)]" />
             </button>
             <button
               onClick={toggleTheme}
@@ -150,10 +151,10 @@ export default function Header() {
             </button>
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
               aria-label="Open Navigation Menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -233,20 +234,23 @@ export default function Header() {
 
         {/* Bottom Bar: Extra Controls for Mobile Drawer */}
         <div className="border-t border-white/10 p-6 flex items-center justify-between text-xs text-[var(--color-text-dim)]">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Available for Opportunities</span>
+            <span className="font-semibold text-slate-300">Available for Opportunities</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={toggleLang}
-              className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white font-semibold"
+              className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white"
+              title="Switch Language"
+              aria-label="Switch Language"
             >
-              {lang}
+              <Globe className="w-4 h-4 text-[var(--color-primary-light)]" />
             </button>
             <button
               onClick={toggleTheme}
-              className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-white"
+              className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white"
+              aria-label="Toggle Theme"
             >
               {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
             </button>

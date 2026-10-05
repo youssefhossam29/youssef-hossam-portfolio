@@ -50,50 +50,50 @@ const tickerLogos = [
 
 export default function TechMarquee() {
   return (
-    <section className="py-14 sm:py-16 overflow-hidden relative border-y border-white/5 bg-[#080C16]">
+    <section className="page-section overflow-hidden relative border-y border-white/5 bg-[#080C16]">
       {/* Edge gradient masks for smooth fade in/out */}
       <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[var(--color-bg)] to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[var(--color-bg)] to-transparent z-10 pointer-events-none" />
 
-      <div className="page-container mb-10">
-        <div className="section-header !mb-8">
-          <span className="inline-block self-center px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+      <div className="page-container mb-12">
+        <div className="section-header !mb-12">
+          <span className="inline-block self-center px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
             Engineering Stack
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             Specialized Technologies & Core Competencies
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Logically structured across backend engineering, commercial e-commerce, cloud infrastructure, and security standards.
           </p>
         </div>
 
-        {/* 4 Categorized Stack Cards (Logical Grouping) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 4 Categorized Stack Cards (Proper padding and row-gap) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {stackCategories.map((cat) => {
             const Icon = cat.icon;
             return (
               <div
                 key={cat.title}
-                className="glass-card p-5 flex flex-col justify-between space-y-4 hover:border-white/20 transition-all"
+                className="glass-card p-6 sm:p-7 flex flex-col justify-between space-y-5 hover:border-white/20 transition-all h-full"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className={`p-2.5 rounded-xl border shrink-0 ${cat.badgeColor}`}>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3.5">
+                    <span className={`p-3 rounded-xl border shrink-0 ${cat.badgeColor}`}>
                       <Icon className="w-5 h-5" />
                     </span>
                     <div>
                       <h3 className="text-base font-bold text-white leading-tight">
                         {cat.title}
                       </h3>
-                      <p className="text-[11px] text-slate-400">
+                      <p className="text-xs text-slate-400 mt-0.5">
                         {cat.tagline}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/8">
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
@@ -111,13 +111,13 @@ export default function TechMarquee() {
 
       {/* Dynamic Animated Marquee Ribbon */}
       <div className="relative pt-2">
-        <div className="animate-marquee-left flex gap-4">
+        <div className="animate-marquee-left flex gap-5">
           {[...tickerLogos, ...tickerLogos, ...tickerLogos].map((tech, index) => {
             const Icon = tech.icon;
             return (
               <div
                 key={`ticker-${index}`}
-                className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-white min-w-[180px] transition-all group"
+                className="flex items-center gap-3.5 px-5 py-3 rounded-2xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-white min-w-[200px] transition-all group"
               >
                 <div className="p-2 rounded-lg bg-[var(--color-primary)]/15 text-[var(--color-primary-light)] group-hover:scale-105 transition-transform">
                   <Icon className="w-4 h-4" />

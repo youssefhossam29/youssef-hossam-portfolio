@@ -44,7 +44,7 @@ export default function ContactPage() {
 
           {/* Page Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Start a Conversation</span>
             </div>
@@ -150,28 +150,28 @@ export default function ContactPage() {
                       href={siteConfig.social.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
+                      className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5 shadow-sm"
                       aria-label="GitHub Profile"
                     >
-                      <GithubIcon className="w-4 h-4" />
+                      <GithubIcon className="w-5 h-5" />
                     </a>
                     <a
                       href={siteConfig.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
+                      className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5 shadow-sm"
                       aria-label="LinkedIn Profile"
                     >
-                      <LinkedinIcon className="w-4 h-4" />
+                      <LinkedinIcon className="w-5 h-5" />
                     </a>
                     <a
                       href={siteConfig.social.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
+                      className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5 shadow-sm"
                       aria-label="WhatsApp"
                     >
-                      <MessageCircle className="w-4 h-4" />
+                      <MessageCircle className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
