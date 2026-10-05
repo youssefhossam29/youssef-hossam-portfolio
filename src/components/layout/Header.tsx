@@ -69,8 +69,8 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links Container with Generous Padding & Border Radius */}
-          <nav className="hidden md:flex items-center gap-2 p-2 sm:px-3 sm:py-2.5 rounded-2xl bg-[rgba(17,24,39,0.82)] border border-[rgba(255,255,255,0.12)] backdrop-blur-lg shadow-xl shadow-black/30">
+          {/* Desktop Navigation Links Container (Padding: 15px to 20px, within 15-30px) */}
+          <nav className="hidden md:flex items-center gap-2 p-3 sm:px-4 sm:py-3.5 rounded-2xl bg-[rgba(17,24,39,0.82)] border border-[rgba(255,255,255,0.12)] backdrop-blur-lg shadow-xl shadow-black/30">
             {siteConfig.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -115,16 +115,16 @@ export default function Header() {
               )}
             </button>
 
-            {/* CV Download Button */}
+            {/* CV Download Button - Unified Button Standards */}
             <a
               href={siteConfig.brand.cvPath}
               download="Youssef-Hossam-Software-Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="h-11 px-5 flex items-center gap-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white border border-[var(--color-primary-light)]/40 hover:border-[var(--color-primary-light)] transition-all duration-200 shadow-md shadow-[var(--color-primary)]/30 hover:shadow-[var(--color-accent-glow)] hover:-translate-y-0.5"
+              className="btn-base btn-primary"
             >
               <Download className="w-4 h-4 text-white" />
-              <span>CV</span>
+              <span>Download CV</span>
             </a>
           </div>
 
@@ -215,14 +215,14 @@ export default function Header() {
               );
             })}
 
-            {/* CV Download Button - Placed Under Contact & NOT Taking Full Width */}
+            {/* CV Download Button - Standardized with Unified Padding, Font Size & Hover Animation */}
             <a
               href={siteConfig.brand.cvPath}
               download="Youssef-Hossam-Software-Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-3 flex items-center justify-center gap-2.5 px-7 py-3 rounded-xl font-bold text-sm uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white border border-[var(--color-primary-light)]/40 shadow-lg shadow-[var(--color-primary)]/40 transition-all duration-200 w-auto min-w-[180px] max-w-[240px]"
+              className="mt-3 btn-base btn-primary w-auto min-w-[180px] max-w-[240px]"
             >
               <Download className="w-4 h-4 text-white" />
               <span>Download CV</span>

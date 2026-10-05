@@ -38,7 +38,7 @@ export default function AboutPage() {
 
             {/* Portrait Column */}
             <div className="lg:col-span-5 flex flex-col items-center gap-6">
-              <div className="relative w-[280px] sm:w-[320px] aspect-square rounded-3xl overflow-hidden glass-card p-3 shadow-2xl">
+              <div className="relative w-[280px] sm:w-[320px] aspect-square rounded-3xl overflow-hidden glass-card p-4 shadow-2xl">
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0A0E17]">
                   <Image
                     src={siteConfig.logos.badgePrimary}
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   download
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 px-7 py-4 rounded-full text-sm font-bold bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-lg shadow-[var(--color-primary)]/30 hover:scale-105 active:scale-95 transition-all"
+                  className="btn-base btn-primary"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Resume (PDF)</span>
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2.5 px-7 py-4 rounded-full text-sm font-bold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all"
+                  className="btn-base btn-outline"
                 >
                   <span>Get In Touch</span>
                   <ArrowRight className="w-4 h-4 text-[var(--color-primary-light)]" />
@@ -245,7 +245,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {educationData.map((edu) => (
-              <div key={edu.id} className="glass-card p-8 flex flex-col justify-between">
+              <div key={edu.id} className="glass-card p-6 sm:p-7 flex flex-col justify-between">
                 <div>
                   <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6 border border-emerald-500/30">
                     <GraduationCap className="w-7 h-7" />

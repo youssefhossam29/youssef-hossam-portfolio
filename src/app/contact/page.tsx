@@ -61,9 +61,9 @@ export default function ContactPage() {
           {/* Two-Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
-            {/* Left: Contact Info */}
+            {/* Left: Contact Info (Padding: 24px - 28px within 15-30px) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="glass-card p-8 space-y-7">
+              <div className="glass-card p-6 sm:p-7 space-y-7">
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-2">Contact Information</h2>
                   <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
@@ -178,9 +178,9 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: Contact Form */}
+            {/* Right: Contact Form (Padding: 24px - 30px, strictly within 15-30px) */}
             <div className="lg:col-span-7">
-              <div className="glass-card p-8 sm:p-10 border border-white/10 shadow-2xl">
+              <div className="glass-card p-6 sm:p-7 md:p-7.5 border border-white/10 shadow-2xl">
                 {isSubmitted ? (
                   <div className="py-16 text-center space-y-5">
                     <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
@@ -192,9 +192,9 @@ export default function ContactPage() {
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
-                      className="mt-4 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/15 text-white transition-colors"
+                      className="btn-base btn-outline mt-4"
                     >
-                      Send Another Message
+                      <span>Send Another Message</span>
                     </button>
                   </div>
                 ) : (
@@ -285,10 +285,10 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Submit */}
+                    {/* Submit - Unified Button Standards */}
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wider bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-xl shadow-[var(--color-primary)]/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
+                      className="btn-base btn-primary w-full"
                     >
                       <span>Send Message</span>
                       <Send className="w-4 h-4" />

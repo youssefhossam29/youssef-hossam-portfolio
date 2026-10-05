@@ -96,7 +96,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Launch live preview of ${project.title}`}
-              className="flex items-center justify-center w-11 h-11 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-lg shadow-[var(--color-primary)]/30 hover:scale-110 active:scale-95 transition-all duration-200 border border-white/20"
+              className="flex items-center justify-center w-11 h-11 rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-lg shadow-[var(--color-primary)]/30 hover:-translate-y-1 hover:shadow-xl active:translate-y-0 transition-all duration-200 border border-white/20"
             >
               <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>

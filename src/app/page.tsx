@@ -54,11 +54,11 @@ export default function HomePage() {
                 I&apos;m passionate about programming and aim to utilize my expertise in web development with Laravel and WordPress to deliver high-performance, scalable, and efficient solutions.
               </p>
 
-              {/* CTA Buttons */}
+              {/* CTA Buttons - Standardized with Unified Padding, Font Size & Hover Animation */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-bold bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-xl shadow-[var(--color-primary)]/30 hover:scale-105 active:scale-95 transition-all"
+                  className="btn-base btn-primary"
                 >
                   <span>Keep In Touch</span>
                   <ArrowRight className="w-4 h-4" />
@@ -69,7 +69,7 @@ export default function HomePage() {
                   download="Youssef-Hossam-Software-Engineer.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 px-7 py-4 rounded-full text-sm font-bold bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-[var(--color-accent)] transition-all hover:scale-105 active:scale-95"
+                  className="btn-base btn-outline"
                 >
                   <Download className="w-4 h-4 text-[var(--color-primary-light)]" />
                   <span>View CV</span>
@@ -85,7 +85,7 @@ export default function HomePage() {
                   href={siteConfig.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
                   aria-label="GitHub"
                 >
                   <GithubIcon className="w-4 h-4" />
@@ -94,7 +94,7 @@ export default function HomePage() {
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
                   aria-label="LinkedIn"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -103,14 +103,14 @@ export default function HomePage() {
                   href={siteConfig.social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
                   aria-label="WhatsApp"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
                 </a>
                 <a
                   href={siteConfig.social.email}
-                  className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
                   aria-label="Email"
                 >
                   <Mail className="w-4 h-4" />
@@ -118,12 +118,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Hero Image */}
+            {/* Right: Hero Image Container (Padding strictly between 15-30px) */}
             <div className="lg:col-span-5 relative flex items-center justify-center">
               <div className="absolute w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] rounded-full border border-white/8 pointer-events-none" />
               <div className="absolute w-[270px] h-[270px] sm:w-[330px] sm:h-[330px] rounded-full border border-[var(--color-primary)]/20 pointer-events-none" />
 
-              <div className="relative w-[290px] sm:w-[360px] lg:w-[400px] aspect-[4/5] rounded-3xl overflow-hidden glass-card p-2 shadow-2xl">
+              <div className="relative w-[290px] sm:w-[360px] lg:w-[400px] aspect-[4/5] rounded-3xl overflow-hidden glass-card p-4 shadow-2xl">
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0F172A]">
                   <Image
                     src={siteConfig.logos.heroArt}
@@ -166,8 +166,8 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Pillar 1 */}
-            <div className="glass-card p-8 md:p-10 relative overflow-hidden group">
+            {/* Pillar 1 (Container padding: 24px - 28px, strictly within 15-30px) */}
+            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group">
               <div className="w-14 h-14 rounded-2xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] flex items-center justify-center mb-6 border border-[var(--color-primary)]/30 group-hover:scale-110 transition-transform">
                 <Server className="w-7 h-7" />
               </div>
@@ -192,8 +192,8 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Pillar 2 */}
-            <div className="glass-card p-8 md:p-10 relative overflow-hidden group">
+            {/* Pillar 2 (Container padding: 24px - 28px, strictly within 15-30px) */}
+            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group">
               <div className="w-14 h-14 rounded-2xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center mb-6 border border-[var(--color-accent)]/30 group-hover:scale-110 transition-transform">
                 <Layout className="w-7 h-7" />
               </div>
@@ -238,7 +238,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all self-start md:self-auto shrink-0"
+              className="btn-base btn-outline self-start md:self-auto shrink-0"
             >
               <span>View All Projects ({projectsData.length})</span>
               <ArrowRight className="w-4 h-4 text-[var(--color-primary-light)]" />
@@ -259,7 +259,8 @@ export default function HomePage() {
       {/* ================= 5. CALL TO ACTION ================= */}
       <section className="page-section">
         <div className="page-container">
-          <div className="relative rounded-3xl p-10 sm:p-14 lg:p-20 overflow-hidden glass-card text-center border border-white/15">
+          {/* CTA Box Container: padding 24px - 30px, capped at 30px */}
+          <div className="relative rounded-3xl p-6 sm:p-7 md:p-7.5 overflow-hidden glass-card text-center border border-white/15">
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/20 via-transparent to-[var(--color-accent)]/20 pointer-events-none" />
 
             <div className="relative max-w-2xl mx-auto space-y-6">
@@ -272,18 +273,18 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
                 <Link
                   href="/contact"
-                  className="flex items-center gap-2.5 px-8 py-4 rounded-full text-base font-bold bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white shadow-xl shadow-[var(--color-primary)]/40 hover:scale-105 active:scale-95 transition-all"
+                  className="btn-base btn-primary"
                 >
                   <span>Let&apos;s Talk Together</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href={siteConfig.brand.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 px-7 py-4 rounded-full text-base font-bold bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/15 hover:border-emerald-400 transition-all hover:scale-105"
+                  className="btn-base btn-whatsapp"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-4 h-4" />
                   <span>Instant WhatsApp</span>
                 </a>
               </div>

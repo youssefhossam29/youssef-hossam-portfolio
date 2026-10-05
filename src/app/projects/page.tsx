@@ -47,16 +47,16 @@ export default function ProjectsPage() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  className={`btn-base ${
                     isSelected
-                      ? "bg-[var(--color-primary)] text-white shadow-lg shadow-[var(--color-primary)]/30 border border-white/20 scale-105"
-                      : "bg-white/5 hover:bg-white/10 text-[var(--color-text-muted)] hover:text-white border border-white/10"
+                      ? "btn-primary scale-105"
+                      : "btn-outline text-[var(--color-text-muted)]"
                   }`}
                 >
                   <span>{category}</span>
                   <span
                     className={`px-2 py-0.5 rounded-full text-xs ${
-                      isSelected ? "bg-white/20 text-white font-bold" : "bg-white/5 text-[var(--color-text-dim)]"
+                      isSelected ? "bg-white/20 text-white font-bold" : "bg-white/10 text-[var(--color-text-dim)]"
                     }`}
                   >
                     {count}
