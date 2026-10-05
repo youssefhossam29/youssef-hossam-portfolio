@@ -107,13 +107,20 @@ body {
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
   border-radius: 18px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
 .glass-card:hover {
   background: var(--glass-card-hover);
-  border-color: var(--color-border-glow);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4), 0 0 24px -4px var(--color-accent-glow);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 3px;
 }
 
 .glass-pill {
@@ -182,6 +189,21 @@ body {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+  .pulse-whatsapp {
+    animation: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ==========================================
    LAYOUT SYSTEM — Page Container & Sections
    ========================================== */
@@ -192,8 +214,8 @@ body {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (min-width: 640px) {
@@ -210,16 +232,23 @@ body {
   }
 }
 
-/* Section vertical rhythm */
+/* Section vertical rhythm: balanced, compact, intentional */
 .page-section {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: 56px;
+  padding-bottom: 56px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .page-section {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-section {
+    padding-top: 44px;
+    padding-bottom: 44px;
   }
 }
 
@@ -229,7 +258,7 @@ body {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   gap: 12px;

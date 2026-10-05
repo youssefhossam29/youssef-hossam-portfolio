@@ -22,43 +22,43 @@ export default function HomePage() {
   return (
     <div className="relative overflow-hidden">
       {/* Background ambient radial glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[700px] bg-radial-glow pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[560px] bg-radial-glow pointer-events-none -z-10" />
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="page-section">
+      <section className="pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20">
         <div className="page-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-            {/* Left Content (20px spacing between elements inside container) */}
+            {/* Left Content (Clear Hierarchy & High Readability) */}
             <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
-              {/* Status Pill */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              {/* Status Pill (Clean, Non-distracting) */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>{siteConfig.brand.status.text}</span>
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Hi, I&apos;m{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
-                  {siteConfig.brand.name}
-                </span>{" "}
+                <span className="text-white">Youssef Hossam</span>
+                <span className="text-slate-400 font-normal"> — </span>
+                <br className="hidden sm:inline" />
                 a{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary-light)] to-[var(--color-accent)] font-extrabold glow-text">
-                  Backend Engineer (Laravel and PHP)
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary-light)] to-[var(--color-accent)] font-extrabold">
+                  Backend Engineer (Laravel & PHP)
                 </span>
               </h1>
 
-              {/* Bio */}
-              <p className="text-base sm:text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                I&apos;m passionate about programming and aim to utilize my expertise in web development with Laravel and WordPress to deliver high-performance, scalable, and efficient solutions.
+              {/* Bio / Description (High contrast, easy to read) */}
+              <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                Engineering robust server-side architectures, fault-tolerant RESTful APIs, and custom high-converting WordPress & WooCommerce systems delivering measurable commercial growth.
               </p>
 
-              {/* CTA Buttons (20px gap) */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5">
+              {/* CTA Buttons: Keep In Touch (Primary) & View CV (Secondary) */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1">
                 <Link
                   href="/contact"
-                  className="btn-base btn-primary"
+                  className="btn-base btn-primary shadow-lg shadow-[var(--color-primary)]/25"
                 >
                   <span>Keep In Touch</span>
                   <ArrowRight className="w-4 h-4" />
@@ -76,17 +76,17 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Social Strip (20px gap) */}
-              <div className="flex items-center justify-center lg:justify-start gap-5">
-                <span className="text-xs uppercase tracking-wider font-semibold text-[var(--color-text-dim)]">
+              {/* Social Strip (Subtle hover, accessible labels) */}
+              <div className="flex items-center justify-center lg:justify-start gap-4 pt-2">
+                <span className="text-xs uppercase tracking-wider font-semibold text-slate-400">
                   Find Me:
                 </span>
                 <a
                   href={siteConfig.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
-                  aria-label="GitHub"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
+                  aria-label="GitHub Profile"
                 >
                   <GithubIcon className="w-4 h-4" />
                 </a>
@@ -94,8 +94,8 @@ export default function HomePage() {
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
-                  aria-label="LinkedIn"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
+                  aria-label="LinkedIn Profile"
                 >
                   <LinkedinIcon className="w-4 h-4" />
                 </a>
@@ -103,27 +103,27 @@ export default function HomePage() {
                   href={siteConfig.social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
-                  aria-label="WhatsApp"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
+                  aria-label="WhatsApp Chat"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
                 </a>
                 <a
                   href={siteConfig.social.email}
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
-                  aria-label="Email"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
+                  aria-label="Send Direct Email"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            {/* Right: Hero Image Container (No overflow-hidden on outer card so floating badges are 100% visible) */}
+            {/* Right: Profile Card (Balanced, unclipped floating badges) */}
             <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="absolute w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] rounded-full border border-white/8 pointer-events-none" />
-              <div className="absolute w-[270px] h-[270px] sm:w-[330px] sm:h-[330px] rounded-full border border-[var(--color-primary)]/20 pointer-events-none" />
+              <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full border border-white/8 pointer-events-none" />
+              <div className="absolute w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] rounded-full border border-[var(--color-primary)]/20 pointer-events-none" />
 
-              <div className="relative w-[290px] sm:w-[360px] lg:w-[400px] aspect-[4/5] rounded-3xl glass-card p-4 shadow-2xl border border-white/20">
+              <div className="relative w-[280px] sm:w-[350px] lg:w-[380px] aspect-[4/5] rounded-3xl glass-card p-3.5 shadow-2xl border border-white/20">
                 {/* Inner Image Container (Only image has overflow-hidden) */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0A0E1A] border border-white/10 shadow-inner">
                   <Image
@@ -131,20 +131,20 @@ export default function HomePage() {
                     alt={siteConfig.brand.name}
                     fill
                     priority
-                    sizes="(max-width: 768px) 290px, (max-width: 1024px) 360px, 400px"
+                    sizes="(max-width: 768px) 280px, (max-width: 1024px) 350px, 380px"
                     className="object-cover object-center hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 
-                {/* Floating Badge 1: Laravel Expert (Generous padding, high contrast glassmorphism, glowing indicator) */}
-                <div className="absolute -left-3 sm:-left-8 top-8 sm:top-12 z-20 px-6 py-3.5 rounded-2xl bg-[#131D31]/95 border border-white/25 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.75)] flex items-center gap-3.5 text-xs sm:text-sm font-bold text-white whitespace-nowrap transition-transform hover:-translate-y-1">
-                  <span className="w-3 h-3 rounded-full bg-[#FF2D20] shadow-[0_0_12px_#FF2D20] shrink-0" />
+                {/* Floating Badge 1: Laravel Expert */}
+                <div className="absolute -left-3 sm:-left-7 top-8 sm:top-12 z-20 px-5 py-3 rounded-2xl bg-[#131D31]/95 border border-white/25 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.75)] flex items-center gap-3 text-xs sm:text-sm font-bold text-white whitespace-nowrap transition-transform hover:-translate-y-1">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF2D20] shadow-[0_0_12px_#FF2D20] shrink-0" />
                   <span className="tracking-wide">Laravel Expert</span>
                 </div>
 
-                {/* Floating Badge 2: WordPress & WooCommerce (Generous padding, high contrast glassmorphism, glowing indicator) */}
-                <div className="absolute -right-3 sm:-right-8 bottom-8 sm:bottom-12 z-20 px-6 py-3.5 rounded-2xl bg-[#131D31]/95 border border-white/25 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.75)] flex items-center gap-3.5 text-xs sm:text-sm font-bold text-white whitespace-nowrap transition-transform hover:-translate-y-1">
-                  <span className="w-3 h-3 rounded-full bg-[#00749C] shadow-[0_0_12px_#00A4D6] shrink-0" />
+                {/* Floating Badge 2: WordPress & WooCommerce */}
+                <div className="absolute -right-3 sm:-right-7 bottom-8 sm:bottom-12 z-20 px-5 py-3 rounded-2xl bg-[#131D31]/95 border border-white/25 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.75)] flex items-center gap-3 text-xs sm:text-sm font-bold text-white whitespace-nowrap transition-transform hover:-translate-y-1">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00749C] shadow-[0_0_12px_#00A4D6] shrink-0" />
                   <span className="tracking-wide">WordPress & WooCommerce</span>
                 </div>
               </div>
@@ -157,40 +157,40 @@ export default function HomePage() {
       <section className="page-section">
         <div className="page-container">
           <div className="section-header">
-            <span className="inline-block self-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20">
+            <span className="inline-block self-center px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20">
               Specialized Engineering
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
               Two Complementary Pillars of Excellence
             </h2>
-            <p className="text-[var(--color-text-muted)] text-base">
-              From high-throughput backend architecture to rapid commercial e-commerce storefronts.
+            <p className="text-slate-300 text-base max-w-2xl mx-auto">
+              Bridging high-throughput backend architecture with commercial, high-converting e-commerce platforms.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Pillar 1 (Container padding: 24px - 28px, strictly within 15-30px, 20px internal spacing) */}
-            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group space-y-5 flex flex-col justify-between">
-              <div className="space-y-5">
-                <div className="w-14 h-14 rounded-2xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] flex items-center justify-center border border-[var(--color-primary)]/30 group-hover:scale-110 transition-transform p-3">
-                  <Server className="w-7 h-7" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+            {/* Pillar 1: Backend Architecture */}
+            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group space-y-5 flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                <div className="w-13 h-13 rounded-2xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] flex items-center justify-center border border-[var(--color-primary)]/30 group-hover:scale-105 transition-transform p-3">
+                  <Server className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Backend Architecture & RESTful APIs
                 </h3>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
-                  Engineering fault-tolerant server-side solutions with Laravel and PHP. Focusing on database optimization, Redis cache hierarchies, microservices, and airtight authentication.
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                  Engineering fault-tolerant server-side systems with Laravel and PHP. Focusing on relational database optimization, Redis cache hierarchies, and airtight security authentication.
                 </p>
               </div>
-              <ul className="space-y-5 pt-3 border-t border-white/5 text-sm text-[var(--color-text)]">
+              <ul className="space-y-3.5 pt-4 border-t border-white/5 text-sm text-slate-200">
                 {[
-                  "RESTful APIs with automated test coverage",
-                  "Relational MySQL schema design & query indexing",
-                  "Redis caching, queue jobs, and real-time WebSockets",
-                  "OWASP security hardening & JWT / Sanctum auth",
+                  "High-throughput RESTful APIs with automated test coverage",
+                  "Relational MySQL schema architecture & query optimization",
+                  "Redis caching hierarchies, queue jobs & real-time WebSockets",
+                  "OWASP security hardening & JWT / Sanctum authentication",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <span className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-400 shrink-0 border border-emerald-500/20">
+                    <span className="p-1 rounded-lg bg-emerald-500/15 text-emerald-400 shrink-0 border border-emerald-500/20">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                     </span>
                     <span>{item}</span>
@@ -199,28 +199,28 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Pillar 2 (Container padding: 24px - 28px, strictly within 15-30px, 20px internal spacing) */}
-            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group space-y-5 flex flex-col justify-between">
-              <div className="space-y-5">
-                <div className="w-14 h-14 rounded-2xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center border border-[var(--color-accent)]/30 group-hover:scale-110 transition-transform p-3">
-                  <Layout className="w-7 h-7" />
+            {/* Pillar 2: Custom WordPress & WooCommerce */}
+            <div className="glass-card p-6 sm:p-7 relative overflow-hidden group space-y-5 flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                <div className="w-13 h-13 rounded-2xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center border border-[var(--color-accent)]/30 group-hover:scale-105 transition-transform p-3">
+                  <Layout className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Custom WordPress & WooCommerce Stores
                 </h3>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
-                  Building bespoke, blazing-fast WordPress solutions without bloated visual builder dependencies. Engineered for top conversion rates, seamless payment gateways, and 90+ PageSpeed.
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                  Crafting bespoke, blazing-fast WordPress solutions without bloated builder plugins. Engineered for maximum checkout conversion, seamless payment APIs, and 90+ PageSpeed.
                 </p>
               </div>
-              <ul className="space-y-5 pt-3 border-t border-white/5 text-sm text-[var(--color-text)]">
+              <ul className="space-y-3.5 pt-4 border-t border-white/5 text-sm text-slate-200">
                 {[
-                  "Custom theme & plugin development with clean PHP",
-                  "High-converting WooCommerce checkouts & payment APIs",
-                  "Bespoke ACF Pro custom fields & dynamic architectures",
+                  "Custom theme & plugin development with clean, scalable PHP",
+                  "High-conversion WooCommerce checkouts & payment gateway APIs",
+                  "Dynamic content architectures with ACF Pro & REST endpoints",
                   "Core Web Vitals optimization achieving 90+ speed scores",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <span className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-400 shrink-0 border border-emerald-500/20">
+                    <span className="p-1 rounded-lg bg-emerald-500/15 text-emerald-400 shrink-0 border border-emerald-500/20">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                     </span>
                     <span>{item}</span>
@@ -235,16 +235,16 @@ export default function HomePage() {
       {/* ================= 3. FEATURED PROJECTS ================= */}
       <section className="page-section">
         <div className="page-container">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-            <div className="space-y-4">
-              <span className="inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div className="space-y-3">
+              <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/20">
                 Selected Works
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
                 Featured Case Studies & Platforms
               </h2>
-              <p className="text-[var(--color-text-muted)] text-base max-w-xl">
-                Live enterprise systems and high-converting stores delivering measurable business value.
+              <p className="text-slate-300 text-sm sm:text-base max-w-xl">
+                Real production systems and high-converting commercial stores engineered for verified business outcomes.
               </p>
             </div>
             <Link
@@ -256,7 +256,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -264,27 +264,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= 4. TECH MARQUEE ================= */}
+      {/* ================= 4. TECH MARQUEE & STACK ================= */}
       <TechMarquee />
 
       {/* ================= 5. CALL TO ACTION ================= */}
       <section className="page-section">
         <div className="page-container">
-          {/* CTA Box Container: padding 24px - 30px, capped at 30px, 20px element spacing */}
-          <div className="relative rounded-3xl p-6 sm:p-7 md:p-7.5 overflow-hidden glass-card text-center border border-white/15">
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/20 via-transparent to-[var(--color-accent)]/20 pointer-events-none" />
+          <div className="relative rounded-3xl p-8 sm:p-10 md:p-12 overflow-hidden glass-card text-center border border-white/15">
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/15 via-transparent to-[var(--color-accent)]/15 pointer-events-none" />
 
             <div className="relative max-w-2xl mx-auto space-y-5">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                Ready to Engineer Your Next Digital Breakthrough?
+              <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                🟢 Available for Immediate Engagement
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Ready to Build Something Scalable & High-Impact?
               </h2>
-              <p className="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
-                Whether you need an enterprise backend architect for your team, or a high-converting web store for your brand — let&apos;s build it with precision.
+
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+                Whether you need a dedicated Backend Engineer for enterprise Laravel systems, high-converting WooCommerce storefronts, or API architecture audits — let&apos;s build it with precision.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-5 pt-3">
+
+              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                 <Link
                   href="/contact"
-                  className="btn-base btn-primary"
+                  className="btn-base btn-primary shadow-lg shadow-[var(--color-primary)]/25"
                 >
                   <span>Let&apos;s Talk Together</span>
                   <ArrowRight className="w-4 h-4" />

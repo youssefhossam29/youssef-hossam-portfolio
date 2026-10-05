@@ -46,41 +46,41 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "glass-header pt-4 pb-4 sm:pt-5 sm:pb-5 min-h-[84px] shadow-xl"
-            : "bg-transparent pt-7 pb-6 sm:pt-8 sm:pb-7 min-h-[96px]"
+            ? "glass-header py-3 sm:py-3.5 min-h-[66px] shadow-lg shadow-black/25"
+            : "bg-transparent py-4 sm:py-5 min-h-[76px]"
         }`}
       >
         <div className="page-container flex items-center justify-between">
-          {/* Brand Logo - Enlarged Size for High Impact */}
+          {/* Brand Logo */}
           <Link
             href="/"
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Youssef Hossam Homepage"
           >
-            <div className="relative w-auto h-16 sm:h-18 md:h-20 flex items-center transition-transform duration-200 group-hover:scale-105">
+            <div className="relative w-auto h-10 sm:h-11 md:h-12 flex items-center transition-transform duration-200 group-hover:scale-105">
               <Image
                 src={siteConfig.logos.header}
                 alt={siteConfig.brand.name}
-                width={360}
-                height={85}
+                width={260}
+                height={60}
                 priority
-                className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain"
+                className="h-9 sm:h-10 md:h-11 w-auto object-contain"
               />
             </div>
           </Link>
 
-          {/* Desktop Navigation Links Container (Padding: 15px to 20px, within 15-30px) */}
-          <nav className="hidden md:flex items-center gap-2 p-3 sm:px-4 sm:py-3.5 rounded-2xl bg-[rgba(17,24,39,0.82)] border border-[rgba(255,255,255,0.12)] backdrop-blur-lg shadow-xl shadow-black/30">
+          {/* Desktop Navigation Links Container */}
+          <nav className="hidden md:flex items-center gap-1.5 p-1.5 rounded-2xl bg-[rgba(17,24,39,0.85)] border border-white/10 backdrop-blur-xl shadow-lg shadow-black/25">
             {siteConfig.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                     isActive
                       ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-primary)]/40 font-bold"
-                      : "text-[var(--color-text-muted)] hover:text-white hover:bg-white/10"
+                      : "text-slate-300 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -89,22 +89,23 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Controls & CTA (Desktop) - Consistent Height (h-11), Padding & Border-Radius */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Controls & CTA (Desktop) */}
+          <div className="hidden md:flex items-center gap-2.5">
             {/* Language Switcher */}
             <button
               onClick={toggleLang}
-              className="h-11 px-4 flex items-center gap-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
+              className="h-10 px-3 flex items-center gap-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
               title="Toggle Language"
+              aria-label="Toggle Language"
             >
-              <Globe className="w-4 h-4 text-[var(--color-primary-light)]" />
+              <Globe className="w-3.5 h-3.5 text-[var(--color-primary-light)]" />
               <span>{lang}</span>
             </button>
 
             {/* Dark / Light Mode Toggle */}
             <button
               onClick={toggleTheme}
-              className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--color-text)] transition-all duration-200 shadow-sm"
               aria-label="Toggle Theme"
               title="Toggle Theme"
             >
@@ -115,13 +116,13 @@ export default function Header() {
               )}
             </button>
 
-            {/* CV Download Button - Unified Button Standards */}
+            {/* CV Download Button */}
             <a
               href={siteConfig.brand.cvPath}
               download="Youssef-Hossam-Software-Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-base btn-primary"
+              className="btn-base btn-primary !py-2.5 !px-5"
             >
               <Download className="w-4 h-4 text-white" />
               <span>Download CV</span>
