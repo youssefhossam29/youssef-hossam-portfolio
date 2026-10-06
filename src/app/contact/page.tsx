@@ -43,9 +43,11 @@ export default function ContactPage() {
         <div className="page-container">
 
           {/* Page Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
-            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
-              <Sparkles className="w-3.5 h-3.5" />
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5 pt-8">
+            <div
+              style={{ padding: "8px 20px" }}
+              className="inline-flex items-center gap-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[var(--color-primary)]/25 hover:border-white/50 hover:shadow-[0_0_24px_rgba(59,130,246,0.5),inset_0_0_12px_rgba(59,130,246,0.3)]"
+            >
               <span>Start a Conversation</span>
             </div>
 
@@ -74,7 +76,7 @@ export default function ContactPage() {
                 <div className="space-y-5">
                   {/* Location */}
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
-                    <div className="p-3 rounded-xl bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] shrink-0 border border-[var(--color-primary)]/30">
+                    <div className="text-[var(--color-primary-light)] shrink-0 bg-transparent border-0 p-1">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -90,7 +92,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <div className="flex items-start justify-between gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/8">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-xl bg-[var(--color-accent)]/20 text-[var(--color-accent)] shrink-0 border border-[var(--color-accent)]/30">
+                      <div className="text-[var(--color-accent)] shrink-0 bg-transparent border-0 p-1">
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
@@ -121,7 +123,7 @@ export default function ContactPage() {
 
                   {/* Phone */}
                   <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
-                    <div className="p-3 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 border border-emerald-500/30">
+                    <div className="text-emerald-400 shrink-0 bg-transparent border-0 p-1">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -140,8 +142,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Social Links (20px gap, padded icons with rounded-xl) */}
-                <div className="pt-4 border-t border-white/8 space-y-4">
+                {/* Social Links (20px gap, padded icons with rounded-xl, 0 border) */}
+                <div className="pt-2 border-0 space-y-4">
                   <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)]">
                     Follow My Engineering Work
                   </h4>
@@ -288,7 +290,7 @@ export default function ContactPage() {
                     {/* Submit - Unified Button Standards */}
                     <button
                       type="submit"
-                      className="btn-base btn-primary w-full"
+                      className="btn-base btn-primary shadow-lg shadow-[var(--color-primary)]/25 w-full"
                     >
                       <span>Send Message</span>
                       <Send className="w-4 h-4" />

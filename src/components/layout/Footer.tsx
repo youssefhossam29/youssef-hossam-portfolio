@@ -7,54 +7,45 @@ import {
   Phone,
   MapPin,
   ArrowUpRight,
-  MessageCircle,
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from "@/components/common/Icons";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="relative bg-[#070B14] border-t border-white/10 pt-20 sm:pt-24 pb-14 sm:pb-16 overflow-hidden">
+    <footer style={{ padding: "20px" }} className="relative bg-[#070B14] border-t border-white/10 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--color-accent)]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative page-container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 pb-14 border-b border-white/10">
-          {/* Column 1: Brand & Slogan */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block" aria-label="Youssef Hossam Homepage">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+          {/* Column 1: Brand & Slogan (Centered on mobile, left on desktop) */}
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5 sm:gap-6">
+            <Link href="/" className="inline-flex items-center justify-center md:justify-start" aria-label="Youssef Hossam Homepage">
               <Image
                 src={siteConfig.logos.header}
                 alt={siteConfig.brand.name}
-                width={280}
-                height={70}
-                className="h-10 sm:h-11 md:h-12 w-auto object-contain"
+                width={340}
+                height={85}
+                className="h-16 sm:h-18 md:h-20 lg:h-[72px] w-auto object-contain"
               />
             </Link>
-            <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+            <p className="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-sm">
               {siteConfig.brand.slogan}
             </p>
-            <div>
-              <span className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>{siteConfig.brand.status.text}</span>
-              </span>
-            </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="flex flex-col gap-6">
+          {/* Column 2: Quick Links (Centered on mobile, left on desktop) */}
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4 sm:gap-6">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">
               Quick Navigation
             </h4>
-            <ul className="space-y-4">
+            <ul className="flex flex-col items-center md:items-start gap-3 w-full">
               {siteConfig.nav.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className="w-full flex justify-center md:justify-start">
                   <Link
                     href={item.href}
-                    className="text-sm text-[var(--color-text-muted)] hover:text-white transition-colors flex items-center gap-1.5 group"
+                    className="text-sm text-[var(--color-text-muted)] hover:text-white transition-colors flex items-center justify-center md:justify-start gap-1.5 group"
                   >
                     <span>{item.label}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[var(--color-primary-light)]" />
@@ -64,20 +55,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Direct Contact & Social Links */}
-          <div className="flex flex-col gap-6">
+          {/* Column 3: Direct Contact & Social Links (Centered on mobile, left on desktop) */}
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5 sm:gap-6">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">
               Direct Contact & Networks
             </h4>
-            <ul className="space-y-4 text-sm text-[var(--color-text-muted)]">
-              <li className="flex items-start gap-3">
-                <span className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-[var(--color-primary-light)] shrink-0 mt-0.5">
+            <ul className="flex flex-col items-center md:items-start gap-3 text-sm text-[var(--color-text-muted)] w-full">
+              <li className="flex items-center justify-center md:justify-start gap-3">
+                <span className="text-[var(--color-primary-light)] shrink-0 bg-transparent border-0">
                   <MapPin className="w-4 h-4" />
                 </span>
                 <span>{siteConfig.brand.location}</span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-[var(--color-primary-light)] shrink-0">
+              <li className="flex items-center justify-center md:justify-start gap-3">
+                <span className="text-[var(--color-primary-light)] shrink-0 bg-transparent border-0">
                   <Mail className="w-4 h-4" />
                 </span>
                 <a
@@ -87,8 +78,8 @@ export default function Footer() {
                   {siteConfig.brand.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-[var(--color-primary-light)] shrink-0">
+              <li className="flex items-center justify-center md:justify-start gap-3">
+                <span className="text-[var(--color-primary-light)] shrink-0 bg-transparent border-0">
                   <Phone className="w-4 h-4" />
                 </span>
                 <a
@@ -100,54 +91,46 @@ export default function Footer() {
               </li>
             </ul>
 
-            {/* Padded Social Icons with 20px gap and rounded-xl */}
-            <div className="pt-4 border-t border-white/10">
-              <div className="flex items-center gap-5">
+            {/* Padded Social Icons with 0 border */}
+            <div className="pt-2 border-0 flex justify-center md:justify-start w-full">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <a
                   href={siteConfig.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5 shadow-sm"
                   aria-label="GitHub Profile"
                 >
-                  <GithubIcon className="w-4 h-4" />
+                  <GithubIcon className="w-5 h-5" />
                 </a>
                 <a
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-accent)] transition-all hover:-translate-y-0.5"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5 shadow-sm"
                   aria-label="LinkedIn Profile"
                 >
-                  <LinkedinIcon className="w-4 h-4" />
+                  <LinkedinIcon className="w-5 h-5" />
                 </a>
                 <a
                   href={siteConfig.social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5"
-                  aria-label="WhatsApp Message"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5 shadow-sm"
+                  aria-label="WhatsApp Chat"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-5 h-5" />
                 </a>
                 <a
                   href={siteConfig.social.email}
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5"
-                  aria-label="Direct Email"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[var(--color-primary-light)] transition-all hover:-translate-y-0.5 shadow-sm"
+                  aria-label="Send Direct Email"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-5 h-5" />
                 </a>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Bar: Copyright & Attribution */}
-        <div className="pt-8 sm:pt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-[var(--color-text-dim)] gap-4">
-          <p>© {currentYear} {siteConfig.brand.name}. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Engineered with <span className="text-rose-500 font-bold">Next.js</span> & Clean Architecture.
-          </p>
         </div>
       </div>
     </footer>

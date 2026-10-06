@@ -19,9 +19,11 @@ export default function ProjectsPage() {
         <div className="page-container">
 
           {/* Page Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 space-y-5">
-            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25">
-              <Sparkles className="w-3.5 h-3.5" />
+          <div className="text-center max-w-3xl mx-auto mb-14 space-y-5 pt-8">
+            <div
+              style={{ padding: "8px 20px" }}
+              className="inline-flex items-center gap-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[var(--color-primary)]/25 hover:border-white/50 hover:shadow-[0_0_24px_rgba(59,130,246,0.5),inset_0_0_12px_rgba(59,130,246,0.3)]"
+            >
               <span>Proven Track Record</span>
             </div>
 
@@ -49,7 +51,7 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`btn-base ${
                     isSelected
-                      ? "btn-primary scale-105"
+                      ? "btn-primary shadow-lg shadow-[var(--color-primary)]/25 scale-105"
                       : "btn-outline text-[var(--color-text-muted)]"
                   }`}
                 >
@@ -76,8 +78,8 @@ export default function ProjectsPage() {
           {/* Summary Bar (20px spacing) */}
           <div className="mt-14 p-6 sm:p-7 rounded-2xl glass-card text-center text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex items-center gap-3">
-              <span className="p-1.5 rounded-lg bg-[var(--color-primary)]/15 text-[var(--color-primary-light)] shrink-0 border border-[var(--color-primary)]/20">
-                <Layers className="w-4 h-4" />
+              <span className="text-[var(--color-primary-light)] shrink-0 bg-transparent border-0">
+                <Layers className="w-5 h-5" />
               </span>
               <span>
                 Showing <strong className="text-white">{filteredProjects.length}</strong> of{" "}
