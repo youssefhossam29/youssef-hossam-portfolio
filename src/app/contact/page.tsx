@@ -10,10 +10,8 @@ import {
   CheckCircle,
   Copy,
   Check,
-  MessageCircle,
-  Sparkles,
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from "@/components/common/Icons";
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
@@ -22,7 +20,7 @@ export default function ContactPage() {
     fullName: "",
     email: "",
     phone: "",
-    subject: "Full-Time Backend Opportunity",
+    subject: "",
     message: "",
   });
 
@@ -42,11 +40,11 @@ export default function ContactPage() {
       <section className="page-section">
         <div className="page-container">
 
-          {/* Page Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5 pt-8">
+          {/* Page Header (Full Width, Centered, Gap: 24px) */}
+          <div className="w-full mx-auto flex flex-col items-center justify-center text-center gap-6 mb-16 pt-8">
             <div
               style={{ padding: "8px 20px" }}
-              className="inline-flex items-center gap-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[var(--color-primary)]/25 hover:border-white/50 hover:shadow-[0_0_24px_rgba(59,130,246,0.5),inset_0_0_12px_rgba(59,130,246,0.3)]"
+              className="self-center w-fit inline-flex items-center gap-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--color-primary)]/10 text-[var(--color-primary-light)] border border-[var(--color-primary)]/25 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[var(--color-primary)]/25 hover:border-white/50 hover:shadow-[0_0_24px_rgba(59,130,246,0.5),inset_0_0_12px_rgba(59,130,246,0.3)]"
             >
               <span>Start a Conversation</span>
             </div>
@@ -55,27 +53,33 @@ export default function ContactPage() {
               Let&apos;s Talk For Your Next Projects
             </h1>
 
-            <p className="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
+            <p className="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed max-w-3xl mx-auto">
               Whether you have a technical opportunity, need architectural consulting for your backend, or want to launch a high-converting web store, I&apos;m ready to connect.
             </p>
           </div>
 
           {/* Two-Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div
+            style={{ paddingTop: "30px" }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start w-full"
+          >
 
-            {/* Left: Contact Info (Padding: 24px - 28px within 15-30px, 20px internal spacing) */}
-            <div className="lg:col-span-5 space-y-5">
-              <div className="glass-card p-6 sm:p-7 space-y-5">
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-2">Contact Information</h2>
+            {/* Left: Contact Info (Padding: 20px, Gap: 20px) */}
+            <div className="lg:col-span-5 flex flex-col gap-5">
+              <div style={{ padding: "20px" }} className="glass-card flex flex-col gap-5">
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-2xl font-bold text-white mb-1">Contact Information</h2>
                   <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
                     Feel free to reach out via email or phone. I prioritize fast responses, typically replying within a few hours.
                   </p>
                 </div>
 
-                <div className="space-y-5">
+                <div className="flex flex-col gap-4">
                   {/* Location */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
+                  <div
+                    style={{ padding: "10px" }}
+                    className="flex items-start gap-4 rounded-xl bg-white/[0.03] border border-white/8"
+                  >
                     <div className="text-[var(--color-primary-light)] shrink-0 bg-transparent border-0 p-1">
                       <MapPin className="w-5 h-5" />
                     </div>
@@ -90,7 +94,10 @@ export default function ContactPage() {
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-start justify-between gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/8">
+                  <div
+                    style={{ padding: "10px" }}
+                    className="flex items-start justify-between gap-3 rounded-xl bg-white/[0.03] border border-white/8"
+                  >
                     <div className="flex items-start gap-4">
                       <div className="text-[var(--color-accent)] shrink-0 bg-transparent border-0 p-1">
                         <Mail className="w-5 h-5" />
@@ -109,7 +116,8 @@ export default function ContactPage() {
                     </div>
                     <button
                       onClick={handleCopyEmail}
-                      className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white transition-colors shrink-0 border border-white/10"
+                      style={{ backgroundColor: "transparent", border: "none" }}
+                      className="p-2.5 rounded-xl bg-transparent hover:bg-white/10 text-white transition-colors shrink-0 border-0"
                       title="Copy email"
                       aria-label="Copy email"
                     >
@@ -122,7 +130,10 @@ export default function ContactPage() {
                   </div>
 
                   {/* Phone */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/8">
+                  <div
+                    style={{ padding: "10px" }}
+                    className="flex items-start gap-4 rounded-xl bg-white/[0.03] border border-white/8"
+                  >
                     <div className="text-emerald-400 shrink-0 bg-transparent border-0 p-1">
                       <Phone className="w-5 h-5" />
                     </div>
@@ -143,7 +154,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Social Links (20px gap, padded icons with rounded-xl, 0 border) */}
-                <div className="pt-2 border-0 space-y-4">
+                <div className="pt-2 border-0 flex flex-col gap-3">
                   <h4 className="text-xs uppercase font-bold tracking-wider text-[var(--color-text-dim)]">
                     Follow My Engineering Work
                   </h4>
@@ -173,18 +184,18 @@ export default function ContactPage() {
                       className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 border border-white/10 hover:border-emerald-500 transition-all hover:-translate-y-0.5 shadow-sm"
                       aria-label="WhatsApp"
                     >
-                      <MessageCircle className="w-5 h-5" />
+                      <WhatsAppIcon className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right: Contact Form (Padding: 24px - 30px, strictly within 15-30px, 20px internal spacing) */}
+            {/* Right: Contact Form (Padding: 20px, Gap: 20px) */}
             <div className="lg:col-span-7">
-              <div className="glass-card p-6 sm:p-7 md:p-7.5 border border-white/10 shadow-2xl space-y-5">
+              <div style={{ padding: "20px" }} className="glass-card border border-white/10 shadow-2xl flex flex-col gap-5">
                 {isSubmitted ? (
-                  <div className="py-16 text-center space-y-5">
+                  <div className="py-16 text-center flex flex-col items-center justify-center gap-5">
                     <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
                       <CheckCircle className="w-8 h-8" />
                     </div>
@@ -200,10 +211,10 @@ export default function ContactPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {/* Full Name */}
-                      <div className="space-y-2">
+                      <div className="flex flex-col gap-2">
                         <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
                           Full Name <span className="text-[var(--color-primary-light)]">*</span>
                         </label>
@@ -214,12 +225,13 @@ export default function ContactPage() {
                           placeholder="e.g. John Doe"
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                          className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                          style={{ padding: "10px 16px", borderRadius: "14px" }}
+                          className="w-full rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
                         />
                       </div>
 
                       {/* Email */}
-                      <div className="space-y-2">
+                      <div className="flex flex-col gap-2">
                         <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
                           Email Address <span className="text-[var(--color-primary-light)]">*</span>
                         </label>
@@ -230,14 +242,15 @@ export default function ContactPage() {
                           placeholder="john@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                          style={{ padding: "10px 16px", borderRadius: "14px" }}
+                          className="w-full rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {/* Phone */}
-                      <div className="space-y-2">
+                      <div className="flex flex-col gap-2">
                         <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
                           Phone / WhatsApp
                         </label>
@@ -247,32 +260,31 @@ export default function ContactPage() {
                           placeholder="+1 (555) 000-0000"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                          style={{ padding: "10px 16px", borderRadius: "14px" }}
+                          className="w-full rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
                         />
                       </div>
 
                       {/* Subject */}
-                      <div className="space-y-2">
+                      <div className="flex flex-col gap-2">
                         <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
                           Subject <span className="text-[var(--color-primary-light)]">*</span>
                         </label>
-                        <select
+                        <input
                           id="subject"
+                          type="text"
+                          required
+                          placeholder="e.g. Backend Architecture Consultation"
                           value={formData.subject}
                           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="w-full px-5 py-3.5 rounded-xl bg-[#111827] border border-white/10 text-white focus:outline-none focus:border-[var(--color-primary-light)] transition-all text-sm"
-                        >
-                          <option value="Full-Time Backend Opportunity">Full-Time Backend Opportunity</option>
-                          <option value="Custom WordPress / E-Commerce Project">Custom WordPress / E-Commerce Project</option>
-                          <option value="Database / API Architectural Consultation">Database / API Consultation</option>
-                          <option value="Freelance Contract Collaboration">Freelance Contract</option>
-                          <option value="General Inquiry">General Inquiry</option>
-                        </select>
+                          style={{ padding: "10px 16px", borderRadius: "14px" }}
+                          className="w-full rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm"
+                        />
                       </div>
                     </div>
 
                     {/* Message */}
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-2">
                       <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">
                         Project Details <span className="text-[var(--color-primary-light)]">*</span>
                       </label>
@@ -283,7 +295,8 @@ export default function ContactPage() {
                         placeholder="Tell me about your project, timeline, tech stack, and goals..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm resize-none"
+                        style={{ padding: "10px 16px", borderRadius: "14px" }}
+                        className="w-full rounded-xl bg-white/5 border border-white/10 text-white placeholder-[var(--color-text-dim)] focus:outline-none focus:border-[var(--color-primary-light)] focus:ring-1 focus:ring-[var(--color-primary-light)] transition-all text-sm resize-none"
                       />
                     </div>
 

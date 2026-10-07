@@ -92,7 +92,7 @@ export default function Header() {
 
           {/* Controls & CTA (Desktop): All items standardized to same height (h-10) */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Language Switcher */}
+            {/* Temporarily hidden: Language & Theme Switchers
             <button
               onClick={toggleLang}
               style={{ padding: "8px" }}
@@ -103,7 +103,6 @@ export default function Header() {
               <Globe className="w-4 h-4 text-[var(--color-primary-light)]" />
             </button>
 
-            {/* Dark / Light Mode Toggle */}
             <button
               onClick={toggleTheme}
               style={{ padding: "8px" }}
@@ -117,6 +116,7 @@ export default function Header() {
                 <Moon className="w-4 h-4 text-indigo-400" />
               )}
             </button>
+            */}
 
             {/* CV Download Button: Same height (h-10) with btn-base btn-primary styling & hover */}
             <a
@@ -132,8 +132,9 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Right Controls: Lang + Theme + Hamburger */}
+          {/* Mobile Right Controls: Hamburger */}
           <div className="flex md:hidden items-center gap-2">
+            {/* Temporarily hidden: Language & Theme Switchers
             <button
               onClick={toggleLang}
               className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white"
@@ -153,6 +154,7 @@ export default function Header() {
                 <Moon className="w-4 h-4 text-indigo-400" />
               )}
             </button>
+            */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
@@ -194,7 +196,7 @@ export default function Header() {
               />
             </Link>
 
-            {/* Language & Theme Controls right next to the Logo */}
+            {/* Temporarily hidden: Language & Theme Controls right next to the Logo
             <div className="flex items-center gap-2">
               <button
                 onClick={toggleLang}
@@ -216,6 +218,7 @@ export default function Header() {
                 )}
               </button>
             </div>
+            */}
           </div>
 
           {/* Close Button: Same w-10 h-10 size as Language and Theme buttons */}

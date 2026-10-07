@@ -25,12 +25,9 @@ export default function HomePage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[560px] bg-radial-glow pointer-events-none -z-10" />
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24">
+      <section className="page-section">
         <div className="page-container">
-          <div
-            style={{ paddingTop: "30px" }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-8">
 
             {/* Left Content (Clear Hierarchy & High Readability) */}
             <div className="lg:col-span-7 flex flex-col gap-6 sm:gap-7 items-center lg:items-start text-center lg:text-left">

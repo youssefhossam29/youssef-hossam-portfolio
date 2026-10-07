@@ -52,16 +52,6 @@ export const skillsData: SkillCategory[] = [
       "Comprehensive Documentation",
     ],
   },
-  {
-    title: "Spoken Languages",
-    badge: "Communication",
-    description:
-      "Fluent technical and interpersonal communication with international teams and GCC business clients.",
-    skills: [
-      "Arabic — Native Speaker",
-      "English — Professional Working Proficiency",
-    ],
-  },
 ];
 
 export interface TimelineItem {
